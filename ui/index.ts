@@ -1,8 +1,18 @@
 import { Button } from "./buttons";
-import { TextField } from "./inputs";
-import { ShoppingCartLogo } from "./logos";
+import { Input, TextField } from "./inputs";
+import { Logo, ShoppingCartLogo } from "./logos";
 import { H1, H2, H3, Body } from "./texts";
-import { InstagramIcon, LinkedinIcon, SearchIcon, TwitterIcon } from "./icons";
+import {
+  InstagramIcon,
+  LinkedinIcon,
+  SearchIcon,
+  GithubIcon,
+  SignupIcon,
+  SigninIcon,
+  SignoutIcon,
+  ProfileUserIcon,
+} from "./icons";
+import { LinkCustom } from "./link";
 
 export {
   H1,
@@ -15,5 +25,12 @@ export {
   InstagramIcon,
   LinkedinIcon,
   SearchIcon,
-  TwitterIcon,
+  GithubIcon,
+  SignupIcon,
+  SigninIcon,
+  SignoutIcon,
+  ProfileUserIcon,
+  Logo,
+  Input,
+  LinkCustom,
 };
