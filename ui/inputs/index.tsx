@@ -39,4 +39,4 @@ const TextField = ({ label, placeholder, props, type = "text" }: InputProps) => 
   );
 };
 
-export { TextField };
+export { TextField, Input };

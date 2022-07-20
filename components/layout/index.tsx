@@ -1,16 +1,22 @@
+import { FooterCustom, HeaderCustom } from "components";
 import styled from "styled-components";
 
+const Root = styled.div`
+  height: 100vh;
+  display: grid;
+  align-content: space-between;
+`;
 const Content = styled.section`
   display: grid;
   margin: 0 auto;
 `;
 const Layout = ({ children }: any) => {
   return (
-    <div>
-      <header>Soy el Header</header>
+    <Root>
+      <HeaderCustom />
       <Content>{children}</Content>
-      <footer>Soy el Footer</footer>
-    </div>
+      <FooterCustom />
+    </Root>
   );
 };
 
