@@ -13,6 +13,8 @@ import {
   ProfileUserIcon,
 } from "./icons";
 import { LinkCustom } from "./link";
+import { Image } from "./image";
+import { CardProduct } from "./cardProduct";
 
 export {
   H1,
@@ -33,4 +35,6 @@ export {
   Logo,
   Input,
   LinkCustom,
+  CardProduct,
+  Image,
 };
