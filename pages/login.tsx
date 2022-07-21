@@ -1,11 +1,11 @@
-import React from "react";
-import { H1 } from "ui/index";
+import { Layout, Login } from "components";
+import { NextPage } from "next/types";
 
-const LoginPage = () => {
+const LoginPage: NextPage = () => {
   return (
-    <div>
-      <H1>Login Page</H1>
-    </div>
+    <Layout>
+      <Login />
+    </Layout>
   );
 };
 

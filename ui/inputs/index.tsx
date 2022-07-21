@@ -16,6 +16,18 @@ const Input = styled.input`
     border-color: var(--dark-cerulean);
     box-shadow: inset 0 0 2px rgb(0 0 0 / 40%);
   }
+
+  /* hide arrows of type number  */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+  }
 `;
 
 const Span = styled.span`
