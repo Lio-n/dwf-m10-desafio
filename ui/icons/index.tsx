@@ -6,6 +6,8 @@ import SignupIcon from "./sign-up.svg";
 import SigninIcon from "./sign-in.svg";
 import SignoutIcon from "./sign-out.svg";
 import ProfileUserIcon from "./profile-user.svg";
+import ChevronRight from "./chevron-right.svg";
+import ChevronLeft from "./chevron-left.svg";
 
 export {
   InstagramIcon,
@@ -16,4 +18,6 @@ export {
   SigninIcon,
   SignoutIcon,
   ProfileUserIcon,
+  ChevronRight,
+  ChevronLeft,
 };

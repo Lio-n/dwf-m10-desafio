@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ChevronLeft, ChevronRight } from "ui";
 
 const Button = styled.button<{ color?: string }>`
   /* box model */
@@ -25,4 +26,38 @@ const Button = styled.button<{ color?: string }>`
   }
 `;
 
-export { Button };
+const PaginationButton = styled.button`
+  /* box model*/
+  display: flex;
+  place-items: center;
+  width: max-content;
+  padding: 0.5rem;
+  /* visual */
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
+  border: solid 2px;
+  color: var(--gray);
+  /* typography */
+  font-size: 1rem;
+  font-weight: bolder;
+`;
+
+const NextPagination = ({ onChange }) => {
+  return (
+    <PaginationButton onClick={() => onChange()} style={{ paddingRight: 0 }}>
+      Siguiente <ChevronRight />
+    </PaginationButton>
+  );
+};
+
+const PrevPagination = ({ onChange }) => {
+  return (
+    <PaginationButton onClick={() => onChange()} style={{ paddingLeft: 0 }}>
+      <ChevronLeft />
+      Anterior
+    </PaginationButton>
+  );
+};
+
+export { Button, PrevPagination, NextPagination };

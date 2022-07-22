@@ -1,4 +1,4 @@
-import { Button } from "./buttons";
+import { Button, NextPagination, PrevPagination } from "./buttons";
 import { Input, TextField } from "./inputs";
 import { Logo, ShoppingCartLogo } from "./logos";
 import { H1, H2, H3, Body } from "./texts";
@@ -11,6 +11,8 @@ import {
   SigninIcon,
   SignoutIcon,
   ProfileUserIcon,
+  ChevronRight,
+  ChevronLeft,
 } from "./icons";
 import { LinkCustom } from "./link";
 import { Image } from "./image";
@@ -37,4 +39,8 @@ export {
   LinkCustom,
   CardProduct,
   Image,
+  ChevronRight,
+  ChevronLeft,
+  PrevPagination,
+  NextPagination,
 };

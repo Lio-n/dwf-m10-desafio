@@ -14,9 +14,15 @@ const ListOfProducts = ({ products }) => {
   return (
     <Root>
       {products &&
-        products.map(({ title, picture_url, unit_price, id }) => {
+        products.map(({ title, picture_url, unit_price, objectID }, index) => {
           return (
-            <CardProduct key={id} title={title} picture_url={picture_url} unit_price={unit_price} />
+            <CardProduct
+              key={index}
+              id={objectID}
+              title={title}
+              picture_url={picture_url}
+              unit_price={unit_price}
+            />
           );
         })}
     </Root>

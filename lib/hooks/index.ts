@@ -8,6 +8,16 @@ const useEnableMenu = () => useRecoilState(useMenu);
 
 const useMe = () => useSWR({ path: "/me", isSecure: true }, getAPI);
 
+const useGetProductsByQuery = ({ query, offset = 0 }) => {
+  console.log("🚀 ~ Atom: ", query);
+  const { data, error } = useSWRImmutable({ path: `/search?q=${query}&offset=${offset}` }, getAPI);
+
+  if (data?.results) {
+    console.log("🚀 ~ Data: ", data);
+    return data;
+  }
+};
+
 // # Feactured Products
 const useFeacturedProducts = () => {
   const { data } = useSWRImmutable({ path: "/search?q=c&limit=3" }, getAPI);
@@ -27,4 +37,4 @@ export const useSetToken = () => useSetRecoilState(tokenSelector);
 export const useGetEmail = () => useRecoilValue(emailSelector);
 export const useSetEmail = () => useSetRecoilState(emailSelector);
 
-export { useMe, useEnableMenu, useFeacturedProducts };
+export { useMe, useEnableMenu, useFeacturedProducts, useGetProductsByQuery };

@@ -8,6 +8,7 @@ import { OutsideAlerter } from "./layoutDetectOutSide";
 import { ListOfProducts } from "./listOfProducts";
 import { Login } from "./login-page";
 import { Menu } from "./menu";
+import { ShowProducts } from "./search-page";
 import { SearchForm } from "./searchForm";
 
 export {
@@ -22,4 +23,5 @@ export {
   FeaturedProducts,
   CardProduct,
   ListOfProducts,
+  ShowProducts,
 };
