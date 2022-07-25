@@ -1,13 +1,9 @@
 import { FeaturedProducts } from "components";
-import { useMe } from "lib/hooks";
 
-const Home = ({ q }: { q: string | string[] }) => {
-  const useData = useMe();
-
+const Home = () => {
   return (
     <div>
-      <h1>Soy la Home</h1>
-      {/* <h2>{JSON.stringify(useData)}</h2> */}
+      <h1>Añadir Slider?</h1>
       <FeaturedProducts />
     </div>
   );

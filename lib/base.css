@@ -6,9 +6,15 @@
   --dark-indigo: #201e50;
   --dark-pink: #e75a7c;
   --dark-cerulean: #094f6e;
-  --light-gray: #d3d3d3;
+  --light-gray: #d3d3d342;
   --ebony-clay: #292643;
   --black: #000;
+  --gray: #444;
+  --white: #fff;
+  --green: #76ff03;
+  --mist-blue: #666f88;
+  --amaranth: #d82148;
+  --paris-green: #2fd072;
 }
 * {
   box-sizing: border-box;
@@ -16,6 +22,11 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+body {
+  padding-top: 5rem;
+  background-color: var(--light-gray);
+}
+
 button {
   font-family: "Poppins", sans-serif;
 }

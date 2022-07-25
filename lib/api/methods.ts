@@ -1,6 +1,6 @@
 const API_BASE_URL = "https://dwf-m9-desafio.vercel.app/api";
 
-const fetchAPI = async ({ path, options, isSecure = false }: fetchAPIParams) => {
+const fetchAPI = async ({ path, options, isSecure = false }: FetchAPIParams) => {
   const url = API_BASE_URL + path;
 
   options = {
@@ -12,7 +12,7 @@ const fetchAPI = async ({ path, options, isSecure = false }: fetchAPIParams) => 
   };
 
   if (isSecure) {
-    const token = getSavedToken();
+    const { token } = getSavedToken();
 
     if (!token) throw "No token in the localStorage";
 
@@ -21,10 +21,7 @@ const fetchAPI = async ({ path, options, isSecure = false }: fetchAPIParams) => 
 
   if (options.body) options.body = JSON.stringify(options.body);
 
-  // console.log({ fetch: { url, options } });
-
   const res = await fetch(url, options);
-  // console.log("🚀 methods.ts: ", res);
 
   if (res.status.toString().startsWith("4"))
     throw { message: "Hubo un error en la funcion fetchAPI()", status: res.status };
@@ -34,11 +31,11 @@ const fetchAPI = async ({ path, options, isSecure = false }: fetchAPIParams) => 
 
 // $ Methods ♥（＞ω・)ノ
 // * POST
-const postAPI = ({ path, options, isSecure = false }: fetchAPIParams) => {
+const postAPI = ({ path, options, isSecure = false }: FetchAPIParams) => {
   return fetchAPI({
     path,
     options: {
-      method: "post",
+      method: "POST",
       ...options,
     },
     isSecure,
@@ -46,7 +43,7 @@ const postAPI = ({ path, options, isSecure = false }: fetchAPIParams) => {
 };
 
 // * GET
-const getAPI = ({ path, options, isSecure = false }: fetchAPIParams) => {
+const getAPI = ({ path, options, isSecure = false }: FetchAPIParams) => {
   return fetchAPI({
     path,
     options: {
@@ -56,10 +53,21 @@ const getAPI = ({ path, options, isSecure = false }: fetchAPIParams) => {
   });
 };
 
-const getSavedToken = (): string => {
-  const localdata = localStorage.getItem("user_localdata");
-  const { token } = JSON.parse(localdata as any).user;
-  return token;
+// * PATCH
+const patchAPI = ({ path, options, isSecure = true }: FetchAPIParams) => {
+  return fetchAPI({
+    path,
+    options: {
+      method: "PATCH",
+      ...options,
+    },
+    isSecure,
+  });
 };
 
-export { getAPI, postAPI, getSavedToken, fetchAPI };
+const getSavedToken = (): { token: string } => {
+  const json = localStorage.getItem("token_localdata");
+  return JSON.parse(json);
+};
+
+export { getAPI, postAPI, patchAPI, getSavedToken, fetchAPI };

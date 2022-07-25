@@ -2,7 +2,7 @@ import { Layout, ShowProducts } from "components";
 import { useRouter } from "next/router";
 import { NextPage } from "next/types";
 
-const Search: NextPage = () => {
+const SearchPage: NextPage = () => {
   const router = useRouter();
   const { q } = router.query;
 
@@ -13,4 +13,4 @@ const Search: NextPage = () => {
   );
 };
 
-export default Search;
+export default SearchPage;

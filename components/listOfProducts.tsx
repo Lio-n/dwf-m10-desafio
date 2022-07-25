@@ -9,8 +9,7 @@ const Root = styled.ul`
   width: 100%;
 `;
 
-// Should : Tipar products?
-const ListOfProducts = ({ products }) => {
+const ListOfProducts = ({ products }: { products: Product[] }) => {
   return (
     <Root>
       {products &&

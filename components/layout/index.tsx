@@ -6,15 +6,12 @@ const Root = styled.div`
   display: grid;
   align-content: space-between;
 `;
-const Content = styled.section`
-  display: grid;
-  margin: 0 auto;
-`;
+
 const Layout = ({ children }: any) => {
   return (
     <Root>
       <HeaderCustom />
-      <Content>{children}</Content>
+      {children}
       <FooterCustom />
     </Root>
   );

@@ -4,6 +4,7 @@ type TextProps = {
   children: string;
   color?: string;
   fontWeight?: "bold" | "regular" | "light" | "thin";
+  onClick?: (any) => any;
 };
 const weight = { bold: 700, regular: 400, light: 300, thin: 200 };
 
@@ -12,25 +13,25 @@ const H1 = styled.h1<TextProps>`
   color: ${({ color }) => color || "#000"};
 `;
 
-const H2 = ({ children, color, fontWeight }: TextProps) => {
+const H2 = ({ children, color, fontWeight, onClick }: TextProps) => {
   return (
-    <H1 as="h2" color={color} fontWeight={fontWeight}>
+    <H1 as="h2" color={color} fontWeight={fontWeight} onClick={onClick}>
       {children}
     </H1>
   );
 };
 
-const H3 = ({ children, color, fontWeight }: TextProps) => {
+const H3 = ({ children, color, fontWeight, onClick }: TextProps) => {
   return (
-    <H1 as="h3" color={color} fontWeight={fontWeight}>
+    <H1 as="h3" color={color} fontWeight={fontWeight} onClick={onClick}>
       {children}
     </H1>
   );
 };
 
-const Body = ({ children, color, fontWeight }: TextProps) => {
+const Body = ({ children, color, fontWeight, onClick }: TextProps) => {
   return (
-    <H1 as="p" color={color} fontWeight={fontWeight}>
+    <H1 as="p" color={color} fontWeight={fontWeight} onClick={onClick}>
       {children}
     </H1>
   );

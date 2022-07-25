@@ -1,11 +1,14 @@
-import Link from "next/link";
+import styled from "styled-components";
 
-const LinkCustom = ({ children, href }: { children: React.ReactNode; href: string }) => {
-  return (
-    <Link href={href}>
-      <a target="_blank">{children}</a>
-    </Link>
-  );
-};
+const Link = styled.a<{ color?: string }>`
+  display: block;
+  margin-top: 0.5rem;
+  color: ${({ color }) => color || "var(--dark-pink)"};
+  font-weight: 600;
 
-export { LinkCustom };
+  &:hover {
+    text-decoration: 2px underline;
+  }
+`;
+
+export { Link };

@@ -5,7 +5,7 @@ const CardLayout = styled.div`
   min-width: min-content;
   max-width: 22rem;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--white);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;
 

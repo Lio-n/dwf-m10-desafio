@@ -41,6 +41,10 @@ const PaginationButton = styled.button`
   /* typography */
   font-size: 1rem;
   font-weight: bolder;
+
+  &:hover {
+    color: var(--black);
+  }
 `;
 
 const NextPagination = ({ onChange }) => {
@@ -60,4 +64,15 @@ const PrevPagination = ({ onChange }) => {
   );
 };
 
-export { Button, PrevPagination, NextPagination };
+const BuyButton = () => {
+  return (
+    <Button
+      color="var(--light-blue)"
+      style={{ padding: "0 0.5rem", height: "3rem", fontSize: "1.5rem" }}
+    >
+      Comprar
+    </Button>
+  );
+};
+
+export { Button, PrevPagination, NextPagination, BuyButton };

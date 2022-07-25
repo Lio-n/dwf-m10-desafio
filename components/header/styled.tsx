@@ -1,15 +1,17 @@
 import styled from "styled-components";
-import { Menu, SearchForm } from "components";
-import { Logo } from "ui";
 
 const Header = styled.header`
   /* box model */
   display: flex;
   justify-content: space-around;
   padding: 1rem 1.75rem;
+  width: 100%;
   /* styled */
   background-color: var(--black);
-  color: #fff;
+  color: var(--white);
+  /* positioning */
+  position: fixed;
+  top: 0;
 
   .shopping_cart_logo {
     display: none !important;
@@ -22,14 +24,4 @@ const Header = styled.header`
   }
 `;
 
-const HeaderCustom = () => {
-  return (
-    <Header>
-      <Logo className="shopping_cart_logo" />
-      <SearchForm />
-      <Menu />
-    </Header>
-  );
-};
-
-export { HeaderCustom };
+export { Header };

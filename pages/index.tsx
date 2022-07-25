@@ -1,17 +1,12 @@
-import { HomePage } from "components";
-import { NextPage } from "next";
-import { useRouter } from "next/router";
-import { Layout } from "components";
+import { NextPage } from "next/types";
+import { Layout, Home } from "components";
 
-const Home: NextPage = () => {
-  const router = useRouter();
-  const { q } = router.query;
-
+const HomePage: NextPage = () => {
   return (
     <Layout>
-      <HomePage q={q} />
+      <Home />
     </Layout>
   );
 };
 
-export default Home;
+export default HomePage;

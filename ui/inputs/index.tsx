@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Input = styled.input`
   color: var(--dark-cerulean);
-  border: solid 1px var(--light-gray);
+  border: solid 1px lightgray;
   width: 100%;
   padding: 0 1rem;
   outline: none;
@@ -40,13 +40,14 @@ type InputProps = {
   placeholder?: string;
   label?: string;
   props?: object;
+  defaultValue?: string;
 };
 
-const TextField = ({ label, placeholder, props, type = "text" }: InputProps) => {
+const TextField = ({ label, placeholder, props, type = "text", defaultValue }: InputProps) => {
   return (
     <label>
       {label && <Span>{label}</Span>}
-      <Input type={type} placeholder={placeholder} {...props} />
+      <Input type={type} placeholder={placeholder} {...props} defaultValue={defaultValue} />
     </label>
   );
 };

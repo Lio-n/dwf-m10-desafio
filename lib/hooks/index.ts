@@ -2,39 +2,72 @@ import { getAPI } from "lib/api/methods";
 import useSWR from "swr";
 import useSWRImmutable from "swr/immutable";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { emailSelector, tokenSelector, useMenu, userState } from "./atoms";
+import { tokenState, useMenu } from "./atoms";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const useEnableMenu = () => useRecoilState(useMenu);
 
-const useMe = () => useSWR({ path: "/me", isSecure: true }, getAPI);
+const useMe = (): UserData => {
+  const { data, error } = useSWR({ path: "/me", isSecure: true }, getAPI);
+  if (data?.email) return data;
+};
 
-const useGetProductsByQuery = ({ query, offset = 0 }) => {
-  console.log("🚀 ~ Atom: ", query);
+// # Get Product By Query
+const useGetProductsByQuery = ({
+  query,
+  offset = 0,
+}: useGetProductsByQueryParams): SearchResponse => {
   const { data, error } = useSWRImmutable({ path: `/search?q=${query}&offset=${offset}` }, getAPI);
 
-  if (data?.results) {
-    console.log("🚀 ~ Data: ", data);
-    return data;
-  }
+  if (data?.results) return data;
+};
+
+// # Get Product By Order
+const useGetOrders = () => {
+  const { data, error } = useSWRImmutable({ path: `/me/orders`, isSecure: true }, getAPI);
+
+  if (data?.orders) return data.orders;
 };
 
 // # Feactured Products
-const useFeacturedProducts = () => {
+const useFeacturedProducts = (): Product[] => {
   const { data } = useSWRImmutable({ path: "/search?q=c&limit=3" }, getAPI);
   if (data?.results) return data.results;
 };
 
-// $ User STATE
-export const useUser = () => useRecoilState(userState);
-export const useSetUser = () => useSetRecoilState(userState);
-export const useGetUser = () => useRecoilValue(userState);
+const useLogout = (): boolean => {
+  const setToken = useSetToken();
+
+  if (typeof window == "undefined") return;
+
+  localStorage.removeItem("token_localdata");
+  setToken(undefined);
+};
+
+const useIsLogged = () => {
+  const token = useGetToken();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!token) router.push("/");
+  }, [token]);
+};
 
 // # TOKEN
-export const useGetToken = () => useRecoilValue(tokenSelector);
-export const useSetToken = () => useSetRecoilState(tokenSelector);
+const useToken = () => useRecoilState(tokenState);
+const useGetToken = () => useRecoilValue(tokenState);
+const useSetToken = () => useSetRecoilState(tokenState);
 
-// # EMAIL
-export const useGetEmail = () => useRecoilValue(emailSelector);
-export const useSetEmail = () => useSetRecoilState(emailSelector);
-
-export { useMe, useEnableMenu, useFeacturedProducts, useGetProductsByQuery };
+export {
+  useMe,
+  useEnableMenu,
+  useFeacturedProducts,
+  useGetProductsByQuery,
+  useToken,
+  useGetToken,
+  useSetToken,
+  useLogout,
+  useGetOrders,
+  useIsLogged,
+};

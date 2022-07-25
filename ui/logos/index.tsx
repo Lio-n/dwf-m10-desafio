@@ -8,10 +8,10 @@ const Logo = ({ className, theme }: { className?: string; theme?: "light" | "dar
     alignItems: "center",
   };
   return (
-    <div className={className} style={styles}>
-      <ShoppingCartLogo stroke={theme == "dark" ? "#000" : "#fff"} />
-      <H2 color={theme == "dark" ? "#000" : "#fff"}>Cómpralo</H2>
-    </div>
+    <a href="/" className={className} style={styles}>
+      <ShoppingCartLogo stroke={theme == "dark" ? "var(--black)" : "var(--white)"} />
+      <H2 color={theme == "dark" ? "var(--black)" : "var(--white)"}>Cómpralo</H2>
+    </a>
   );
 };
 
