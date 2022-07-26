@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CardProduct } from "ui";
+import { SkeletonListOfProducts } from "./styled";
 
 const Root = styled.ul`
   display: flex;
@@ -12,7 +13,7 @@ const Root = styled.ul`
 const ListOfProducts = ({ products }: { products: Product[] }) => {
   return (
     <Root>
-      {products &&
+      {products ? (
         products.map(({ title, picture_url, unit_price, objectID }, index) => {
           return (
             <CardProduct
@@ -23,7 +24,10 @@ const ListOfProducts = ({ products }: { products: Product[] }) => {
               unit_price={unit_price}
             />
           );
-        })}
+        })
+      ) : (
+        <SkeletonListOfProducts />
+      )}
     </Root>
   );
 };

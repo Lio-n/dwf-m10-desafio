@@ -29,9 +29,9 @@ const ProductInfo = ({ title, unit_price, description, id }: ProductInfoProps) =
       return;
     }
 
-    const url = await generateOrder({ additionalInfo: { description }, productId: id });
+    const { init_point } = await generateOrder({ additionalInfo: { description }, productId: id });
 
-    if (url) router.push(`${url}`);
+    if (init_point) router.push(`${init_point}`);
   };
 
   return (

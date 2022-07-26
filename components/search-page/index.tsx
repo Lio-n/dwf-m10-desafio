@@ -1,6 +1,7 @@
 import { ListOfProducts } from "components";
 import { useGetProductsByQuery } from "lib/hooks";
 import { useEffect, useState } from "react";
+import { SkeletonBody } from "ui";
 import { Root, SearchResult, ShowPaginatino } from "./styled";
 
 const ShowProducts = ({ q }: { q: string | string[] }) => {
@@ -29,9 +30,9 @@ const ShowProducts = ({ q }: { q: string | string[] }) => {
 
   return (
     <Root>
-      {data?.results && <SearchResult pagination={pagination} />}
+      {data?.results ? <SearchResult pagination={pagination} /> : <SkeletonBody width="150px" />}
 
-      {data?.results && <ListOfProducts products={data?.results} />}
+      <ListOfProducts products={data?.results} />
       {data?.results && (
         <ShowPaginatino
           pagination={pagination}

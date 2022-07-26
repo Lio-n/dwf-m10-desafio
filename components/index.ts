@@ -5,6 +5,7 @@ import { Login } from "./login-page";
 import { ShowProducts } from "./search-page";
 import { Logout } from "./logout-page";
 import { Perfil } from "./perfil-page";
+import { Thanks } from "./thanks-page";
 
 import { HeaderCustom } from "./header";
 import { FeaturedProducts } from "./feacturedProducts";
@@ -15,7 +16,6 @@ import { Menu } from "./menu";
 import { SearchForm } from "./searchForm";
 import { FooterCustom } from "./footer";
 import { UserData } from "./userData";
-import { Thanks } from "./thanks-page";
 
 export {
   HeaderCustom,

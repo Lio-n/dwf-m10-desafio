@@ -20,6 +20,15 @@ import { MenuBotton } from "./buttons/menuBottons";
 import { AlertError, AlertSuccess, AlertWait } from "./alerts";
 import { Link } from "./link";
 import { RootBase } from "./rootBase";
+import { CardInfo, CardLayout } from "./cardProduct/styled";
+import {
+  SkeletonCardProduct,
+  SkeletonH1,
+  SkeletonH3,
+  SkeletonBody,
+  SkeletonCardItem,
+  SkeletonH2,
+} from "./skeletons";
 
 export {
   H1,
@@ -52,4 +61,12 @@ export {
   AlertSuccess,
   Link,
   RootBase,
+  CardLayout,
+  CardInfo,
+  SkeletonCardProduct,
+  SkeletonH1,
+  SkeletonH2,
+  SkeletonH3,
+  SkeletonBody,
+  SkeletonCardItem,
 };

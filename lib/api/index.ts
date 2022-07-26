@@ -33,7 +33,7 @@ const patchMe = async ({ address, full_name }: PatchMeParams): Promise<boolean> 
 const generateOrder = async ({
   additionalInfo,
   productId,
-}: GenerateOrderParams): Promise<string> => {
+}: GenerateOrderParams): Promise<{ init_point: string }> => {
   try {
     return postAPI({
       path: `/order?productId=${productId}`,

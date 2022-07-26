@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
   return (
     <Root>
       <H1>Productos destacados</H1>
-      {results && <ListOfProducts products={results} />}
+      <ListOfProducts products={results} />
     </Root>
   );
 };

@@ -17,7 +17,7 @@ type MenuLinkProps = { name: "Ingresar" | "Crear Cuenta" | "Mi perfil" | "Cerrar
 type FooterLinkProps = { name: "instagram" | "linkedin" | "github" };
 
 type useGetProductsByQueryParams = {
-  query: string;
+  query: string | string[];
   offset?: number;
 };
 

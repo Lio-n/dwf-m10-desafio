@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Image } from "ui";
+import { Image, SkeletonCardItem } from "ui";
 import { ProductInfo } from "./productInfo";
 
-const Root = styled.div`
+const Container = styled.div`
   /* box model */
   display: grid;
-  place-content: center;
   min-width: min-content;
   max-width: 30rem;
   padding: 1rem;
@@ -31,9 +30,9 @@ const Root = styled.div`
 
 const ShowItem = ({ product }: { product: Product }) => {
   return (
-    <Root>
-      {product && (
-        <>
+    <>
+      {product ? (
+        <Container>
           <Image src={product.picture_url} borderRadius="10px" alt={product.title} />
 
           <ProductInfo
@@ -42,9 +41,11 @@ const ShowItem = ({ product }: { product: Product }) => {
             description={product.description}
             id={product.objectID}
           />
-        </>
+        </Container>
+      ) : (
+        <SkeletonCardItem />
       )}
-    </Root>
+    </>
   );
 };
 
