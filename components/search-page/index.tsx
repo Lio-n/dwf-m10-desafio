@@ -21,9 +21,13 @@ const ShowProducts = ({ q }: { q: string | string[] }) => {
     if (data?.pagination) setPagination(data.pagination);
   }, [data, q]);
 
-  const handleNextResults = () => setOptions({ query: q, offset: pagination.limit });
+  const handleNextResults = () => {
+    window.scrollTo(0, 0);
+    setOptions({ query: q, offset: pagination.limit });
+  };
 
   const handlePrevResults = () => {
+    window.scrollTo(0, 0);
     const offset = pagination.total - (pagination.limit + pagination.offset);
     setOptions({ query: q, offset });
   };

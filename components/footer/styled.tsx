@@ -9,16 +9,16 @@ const Footer = styled.footer`
 `;
 
 const icons = {
-  instagram: [<InstagramIcon />, "https://www.instagram.com/tropical_sn0w/"],
-  linkedin: [<LinkedinIcon />, "https://www.linkedin.com/in/leonardo-fontan/"],
-  github: [<GithubIcon />, "https://github.com/Lio-n"],
+  instagram: [<InstagramIcon key="instagram" />, "https://www.instagram.com/tropical_sn0w/"],
+  linkedin: [<LinkedinIcon key="linkedin" />, "https://www.linkedin.com/in/leonardo-fontan/"],
+  github: [<GithubIcon key="github" />, "https://github.com/Lio-n"],
 };
 
 const FooterLink = ({ name }: FooterLinkProps) => {
   const [Icon, path] = icons[name];
 
   return (
-    <a href={`${path}`} target="_blank">
+    <a href={`${path}`} target="_blank" rel="noreferrer">
       {Icon}
     </a>
   );

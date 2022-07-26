@@ -9,6 +9,7 @@ const SearchForm = () => {
     e.preventDefault();
     const query = e.target.search.value;
 
+    if (!query) return;
     router.push(`/search/${query}`);
   };
 

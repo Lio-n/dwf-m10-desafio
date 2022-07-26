@@ -16,7 +16,7 @@ const ItemPage: NextPage = ({ product }: { product: Product }) => {
 export default ItemPage;
 
 export async function getStaticPaths() {
-  const { results } = await getAPI({ path: `/search?q` });
+  const { results } = await getAPI({ path: `/search?q=co` });
 
   return {
     paths: results.map(({ objectID }) => ({ params: { id: objectID } })),
