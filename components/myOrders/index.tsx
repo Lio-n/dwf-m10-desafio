@@ -19,7 +19,7 @@ const MisOrdenes = () => {
     <div style={{ display: "grid", gap: "1rem", textAlign: "center" }}>
       {productIds ? (
         productIds.map((id, index) => (
-          <Item key={index} href={`/item/${id}`}>{`${index < 1 ? "1" : index + 1}° producto`}</Item>
+          <Item key={index} href={`/item/${id}`}>{`${index + 1}° producto`}</Item>
         ))
       ) : (
         <Body fontWeight="light">No hay ordenes generadas</Body>

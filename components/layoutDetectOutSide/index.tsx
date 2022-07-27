@@ -11,7 +11,6 @@ const useOutsideAlerter = (ref, onChange) => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
         onChange();
-        console.log("You clicked outside of me!");
       }
     }
     // Bind the event listener

@@ -12,6 +12,7 @@ const Header = styled.header`
   /* positioning */
   position: fixed;
   top: 0;
+  z-index: 4;
 
   .shopping_cart_logo {
     display: none !important;
