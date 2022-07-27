@@ -1,11 +1,17 @@
 import { Layout, Thanks } from "components";
+import Head from "next/head";
 import { NextPage } from "next/types";
 
 const ThanksPage: NextPage = () => {
   return (
-    <Layout>
-      <Thanks />
-    </Layout>
+    <>
+      <Head>
+        <title>Thanks</title>
+      </Head>
+      <Layout>
+        <Thanks />
+      </Layout>
+    </>
   );
 };
 

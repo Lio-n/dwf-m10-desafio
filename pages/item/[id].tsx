@@ -2,14 +2,19 @@ import React from "react";
 import { NextPage } from "next/types";
 import { Layout, ShowItem } from "components";
 import { getAPI } from "lib/api/methods";
+import Head from "next/head";
 
 const ItemPage: NextPage = ({ product }: { product: Product }) => {
   return (
-    <Layout>
-      <div style={{ padding: "4rem 1rem 4rem" }}>
+    <>
+      <Head>
+        <title>Producto</title>
+        <meta name="description" content="Un producto en particular"></meta>
+      </Head>
+      <Layout>
         <ShowItem product={product} />
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

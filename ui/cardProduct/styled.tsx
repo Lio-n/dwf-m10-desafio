@@ -15,6 +15,7 @@ const CardInfo = styled.div`
   place-items: baseline;
   gap: 1rem;
   padding: 1.5rem;
+  font-size: 1.17em;
 `;
 
 export { CardLayout, CardInfo };

@@ -20,7 +20,7 @@ const Button = styled.button`
 
 const SearchButton = () => {
   return (
-    <Button>
+    <Button aria-label="boton de busqueda">
       <SearchIcon />
     </Button>
   );

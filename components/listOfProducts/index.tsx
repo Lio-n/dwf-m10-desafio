@@ -16,13 +16,14 @@ const ListOfProducts = ({ products }: { products: Product[] }) => {
       {products ? (
         products.map(({ title, picture_url, unit_price, objectID }, index) => {
           return (
-            <CardProduct
-              key={index}
-              id={objectID}
-              title={title}
-              picture_url={picture_url}
-              unit_price={unit_price}
-            />
+            <li key={index} style={{ minWidth: "min-content", maxWidth: "22rem", width: "100%" }}>
+              <CardProduct
+                id={objectID}
+                title={title}
+                picture_url={picture_url}
+                unit_price={unit_price}
+              />
+            </li>
           );
         })
       ) : (

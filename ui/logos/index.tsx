@@ -8,7 +8,7 @@ const Logo = ({ className, theme }: { className?: string; theme?: "light" | "dar
     alignItems: "center",
   };
   return (
-    <a href="/" className={className} style={styles}>
+    <a href="/" className={className} style={styles} aria-label="logo">
       <ShoppingCartLogo stroke={theme == "dark" ? "var(--black)" : "var(--white)"} />
       <H2 color={theme == "dark" ? "var(--black)" : "var(--white)"}>Cómpralo</H2>
     </a>

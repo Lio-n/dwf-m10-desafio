@@ -1,11 +1,17 @@
 import { Layout, Perfil } from "components";
+import Head from "next/head";
 import { NextPage } from "next/types";
 
 const PerfilPage: NextPage = () => {
   return (
-    <Layout>
-      <Perfil />
-    </Layout>
+    <>
+      <Head>
+        <title>Perfil</title>
+      </Head>
+      <Layout>
+        <Perfil />
+      </Layout>
+    </>
   );
 };
 

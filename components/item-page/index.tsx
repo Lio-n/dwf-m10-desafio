@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Image, SkeletonCardItem } from "ui";
+import { Image, RootBase, SkeletonCardItem } from "ui";
 import { ProductInfo } from "./productInfo";
 
 const Container = styled.div`
@@ -10,7 +10,6 @@ const Container = styled.div`
   max-width: 30rem;
   padding: 1rem;
   gap: 1rem;
-  margin: 0 auto;
   /* styled */
   border-radius: 10px;
   background-color: var(--white);
@@ -30,7 +29,7 @@ const Container = styled.div`
 
 const ShowItem = ({ product }: { product: Product }) => {
   return (
-    <>
+    <RootBase>
       {product ? (
         <Container>
           <Image src={product.picture_url} borderRadius="10px" alt={product.title} />
@@ -45,7 +44,7 @@ const ShowItem = ({ product }: { product: Product }) => {
       ) : (
         <SkeletonCardItem />
       )}
-    </>
+    </RootBase>
   );
 };
 

@@ -1,11 +1,17 @@
 import { Layout, Logout } from "components";
+import Head from "next/head";
 import { NextPage } from "next/types";
 
 const LogoutPage: NextPage = () => {
   return (
-    <Layout>
-      <Logout />
-    </Layout>
+    <>
+      <Head>
+        <title>Logout</title>
+      </Head>
+      <Layout>
+        <Logout />
+      </Layout>
+    </>
   );
 };
 

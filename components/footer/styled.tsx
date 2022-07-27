@@ -18,7 +18,7 @@ const FooterLink = ({ name }: FooterLinkProps) => {
   const [Icon, path] = icons[name];
 
   return (
-    <a href={`${path}`} target="_blank" rel="noreferrer">
+    <a href={`${path}`} target="_blank" rel="noreferrer" aria-label={name}>
       {Icon}
     </a>
   );

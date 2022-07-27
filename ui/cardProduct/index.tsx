@@ -1,4 +1,4 @@
-import { H3, Image } from "ui";
+import { Body, Image } from "ui";
 import { CardInfo, CardLayout } from "./styled";
 
 const CardProduct = ({ title, picture_url, unit_price, id }: CardProductProps) => {
@@ -7,8 +7,8 @@ const CardProduct = ({ title, picture_url, unit_price, id }: CardProductProps) =
       <a href={`/item/${id}`}>
         <Image src={picture_url} alt={title} />
         <CardInfo>
-          <H3>{title}</H3>
-          <H3>{"$" + unit_price}</H3>
+          <Body>{title}</Body>
+          <Body>{"$" + unit_price}</Body>
         </CardInfo>
       </a>
     </CardLayout>
