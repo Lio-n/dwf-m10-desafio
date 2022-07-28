@@ -44,7 +44,6 @@ const ShowItem = ({ product }: { product: Product }) => {
       ) : (
         <SkeletonCardItem />
       )}
-      <SkeletonCardItem />
     </RootBase>
   );
 };
