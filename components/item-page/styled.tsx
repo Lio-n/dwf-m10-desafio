@@ -7,7 +7,7 @@ const Form = styled.form`
 
   @media (min-width: 930px) {
     & {
-      max-width: 50%;
+      max-width: 46.5%;
     }
   }
 `;

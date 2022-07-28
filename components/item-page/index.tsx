@@ -18,7 +18,7 @@ const Container = styled.div`
   @media (min-width: 930px) {
     & {
       display: flex;
-      max-width: 60rem;
+      max-width: 56rem;
       gap: 2rem;
     }
     & > img {
@@ -44,6 +44,7 @@ const ShowItem = ({ product }: { product: Product }) => {
       ) : (
         <SkeletonCardItem />
       )}
+      <SkeletonCardItem />
     </RootBase>
   );
 };

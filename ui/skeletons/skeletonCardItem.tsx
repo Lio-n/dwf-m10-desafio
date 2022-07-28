@@ -29,6 +29,7 @@ const Root = styled.div`
   /* box model */
   display: grid;
   min-width: min-content;
+  width: 100%;
   max-width: 30rem;
   padding: 1rem;
   gap: 1rem;
@@ -45,7 +46,7 @@ const Root = styled.div`
   @media (min-width: 930px) {
     & {
       display: flex;
-      max-width: 60rem;
+      max-width: 56rem;
       gap: 2rem;
     }
     & > .skeleton__image {
@@ -61,7 +62,7 @@ const ItemInfo = styled.div`
 
   @media (min-width: 930px) {
     & {
-      max-width: 50%;
+      max-width: 46.5%;
     }
   }
 `;
