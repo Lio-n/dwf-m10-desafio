@@ -23,6 +23,7 @@ const Container = styled.div`
     }
     & > img {
       height: 20rem;
+      width: 50%;
     }
   }
 `;
